@@ -1,28 +1,28 @@
-import type { Config } from 'tailwindcss';
-
-export default <Partial<Config>>{
-  content: ['./components/**/*.{js,vue,ts}', './layouts/**/*.vue', './pages/**/*.vue', './plugins/**/*.{js,ts}', './nuxt.config.{js,ts}', './app.vue'],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./components/**/*.{js,vue,ts}", "./layouts/**/*.vue", "./pages/**/*.vue", "./plugins/**/*.{js,ts}", "./app.vue", "./error.vue"],
   theme: {
-    container: {
-      center: true,
-      padding: '1rem',
-    },
     extend: {
       colors: {
-        primary: {
-          light: '#B4C383',
-          DEFAULT: '#8FA766',
-          dark: '#6A8C4A',
-        },
-        gold: '#D8A472'
+        "digital-seed": "#1AC78D",
+        Dark: "#0b0b0b",
+        Primary: "#ffad32",
+        Light: "#fcfcfc",
+        "Grey-Inactive": "#cfcfcf",
+        Sale: "#f12d2d",
+        "Light Grey": "#f3f3f3",
+        Green: "#98c350",
       },
-      aspectRatio: {
-        '9/8': '1 / 1.125',
-      },
-      screens: {
-        '2xl': '1400px',
+      fontFamily: {
+        raleway: "Raleway",
+        "maiden-orange": "Maiden Orange",
+        rockwell: "Rockwell",
       },
     },
+    container: {
+      center: true,
+      padding: "1rem",
+    },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require("@tailwindcss/forms"), require("@headlessui/tailwindcss")],
 };

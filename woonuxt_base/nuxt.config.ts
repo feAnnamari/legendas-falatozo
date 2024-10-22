@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+  css: ["~/assets/scss/main.scss"],
+
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
@@ -30,7 +32,24 @@ export default defineNuxtConfig({
 
   components: [{ path: resolve('./app/components'), pathPrefix: false }],
 
-  modules: ['woonuxt-settings', 'nuxt-graphql-client', '@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image', '@nuxtjs/i18n'],
+  modules: [
+    'woonuxt-settings',
+    'nuxt-graphql-client',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          Raleway: true,
+          'Maiden Orange': true,
+          Rockwell: true,
+        },
+      },
+    ],
+  ],
 
   'graphql-client': {
     clients: {
